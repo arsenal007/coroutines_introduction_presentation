@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Presentation</title>
+
+  <!-- Reveal.js CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css">
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section data-background-color="#e3dfd4">
+
+        <h1 style="
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    margin-bottom: 4vh;
+  ">
+          An Introduction to Coroutines
+        </h1>
+
+        <p style="
+    font-size: clamp(1.6rem, 2.8vw, 3.2rem);
+    margin: 0;
+  ">
+          <strong>Vasyl Kuzmenko</strong>
+        </p>
+
+        <p style="
+    font-size: clamp(1.6rem, 2.8vw, 3.2rem);
+    margin-top: 2vh;
+  ">
+          <strong>2025</strong>
+        </p>
+
+      </section>
+
+
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 6vh;    /* було ~3vh — збільшено вдвічі */
+  ">
+          Agenda
+        </h2>
+        <ul style="
+    font-size: clamp(1.8rem, 2.6vw, 3rem);
+    line-height: 1.1;
+    padding-left: 2vw;
+">
+          <li style="margin-bottom: 1.4vh;">Inspiration</li>
+          <li style="margin-bottom: 1.4vh;">Event-driven application, asynchronous running</li>
+          <li style="margin-bottom: 1.4vh;">What is coroutine?</li>
+          <li style="margin-bottom: 1.4vh;">
+            Keywords: <strong>co_await</strong>, <strong>co_yield</strong>, <strong>co_return</strong>
+          </li>
+          <li style="margin-bottom: 1.4vh;">Terminology: tasks and generators</li>
+          <li style="margin-bottom: 1.4vh;">Promise type, Awaitable, TaskHandler</li>
+          <li style="margin-bottom: 1.4vh;">Simple example</li>
+        </ul>
+
+      </section>
+      <section data-background-color="#e3dfd4">
+
+        <div style="
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4vw;
+    max-width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  ">
+
+          <!-- Left side: bullet points -->
+          <div style="flex: 1 1 55%;">
+
+            <h2 style="
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        margin-bottom: 3vh;
+      ">
+              Inspiration
+            </h2>
+
+            <ul style="
+        font-size: clamp(1.6rem, 2.2vw, 2.8rem);
+        line-height: 1.5;
+        padding-left: 2vw;
+      ">
+              <li style="margin-bottom: 1.4vh;">
+                Growing interest in C++ coroutines in recent years
+              </li>
+
+              <li style="margin-bottom: 1.4vh;">
+                Increasing number of talks, articles, and async-design materials
+              </li>
+
+              <li style="margin-bottom: 1.4vh;">
+                This talk is inspired
+              </li>
+
+              <li style="margin-bottom: 1.4vh;">
+                One of the clearest introductions to coroutine fundamentals
+              </li>
+            </ul>
+
+          </div>
+
+          <!-- Right side: QR Code + caption -->
+          <div style="
+      flex: 1 1 35%;
+      text-align: center;
+    ">
+            <img src="files/Andreas_Weiß.png" alt="QR Code" style="
+             width: clamp(120px, 20vw, 260px);
+             display: block;
+             margin: 0 auto 1.5vh auto;
+           " />
+
+            <p style="
+        font-size: clamp(1.2rem, 1.8vw, 2rem);
+        margin: 0;
+      ">
+              "A Diagrammatic Coroutine Cheat Sheet" by Andreas Weis, CppCon 2022
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+      <section data-background-color="#e3dfd4">
+
+        <div style="
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4vw;
+    max-width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  ">
+
+          <!-- Left side: text -->
+          <div style="flex: 1 1 55%;">
+
+            <h2 style="
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        margin-bottom: 4vh;
+      ">
+              Event-driven application, asynchronous running
+            </h2>
+
+            <ul style="
+        font-size: clamp(1.6rem, 2.2vw, 2.8rem);
+        line-height: 1.6;
+        padding-left: 2vw;
+      ">
+              <li style="margin-bottom: 1.6vh;">Very complex topic</li>
+              <li style="margin-bottom: 1.6vh;">Coroutines try to simplify event-driven logic</li>
+            </ul>
+
+          </div>
+
+          <!-- Right side: image -->
+          <div style="flex: 1 1 35%; text-align: center;">
+
+            <img src="files/async_tasks.png" alt="Event-driven diagram" style="
+             width: clamp(280px, 35vw, 520px);
+             display: block;
+             margin: 0 auto 1.5vh auto;
+           " />
+
+            <p style="
+        font-size: clamp(1.2rem, 1.6vw, 2rem);
+        margin: 0;
+      ">
+              Event-driven model illustration
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section data-background-color="#e3dfd4">
+
+        <div style="
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4vw;
+    max-width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  ">
+
+          <!-- Left side: text -->
+          <div style="flex: 1 1 55%;">
+
+            <h2 style="
+        font-size: clamp(2.4rem, 4vw, 4rem);
+        margin-bottom: 4vh;
+      ">
+              Embedded application
+            </h2>
+
+            <p style="
+        font-size: clamp(1.8rem, 2.4vw, 3rem);
+        line-height: 1.6;
+        padding-left: 2vw;
+      ">
+              Almost always embedded application is event driven application
+            </p>
+
+          </div>
+
+          <!-- Right side: image -->
+          <div style="flex: 1 1 35%; text-align: center;">
+
+            <!-- TODO: Add embedded application image here -->
+            <img src="files/embedded_app.png" alt="Embedded application" style="
+             width: clamp(280px, 35vw, 520px);
+             display: block;
+             margin: 0 auto 1.5vh auto;
+           " />
+
+            <p style="
+        font-size: clamp(1.2rem, 1.6vw, 2rem);
+        margin: 0;
+      ">
+              Typical embedded event-driven architecture
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize();
+  </script>
+
+</body>
+
+</html>
