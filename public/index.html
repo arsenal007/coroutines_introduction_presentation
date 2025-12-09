@@ -34,7 +34,7 @@
     font-size: clamp(1.6rem, 2.8vw, 3.2rem);
     margin-top: 2vh;
   ">
-          <strong>2025</strong>
+          <strong>2026</strong>
         </p>
 
       </section>
@@ -225,7 +225,7 @@
 
             <!-- TODO: Add embedded application image here -->
             <img src="files/embedded_app.png" alt="Embedded application" style="
-             width: clamp(280px, 35vw, 520px);
+             width: clamp(280px, 45vw, 520px);
              display: block;
              margin: 0 auto 1.5vh auto;
            " />
@@ -243,13 +243,78 @@
 
       </section>
 
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 4vh;
+    text-align: center;
+  ">
+          Coroutines vs Threads
+        </h2>
+
+        <div style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+    max-width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  ">
+
+          <!-- First Image -->
+          <div style="flex: 1 1 40%; text-align: center;">
+            <img src="files/restaurant_kitchen.png" alt="First diagram" style="
+              width: clamp(1120px, 140vw, 2080px);
+              display: block;
+              margin: 0 auto 1.5vh auto;
+            " />
+            <p style="
+        font-size: clamp(1.2rem, 1.6vw, 2rem);
+        margin: 0;
+      ">
+              Abstraction with a Restaurant Kitchen
+            </p>
+          </div>
+
+          <!-- Second Image -->
+          <div style="flex: 1 1 40%; text-align: center;">
+            <img src="files/Andre_Brand.png" alt="QR Code" style="
+              width: clamp(120px, 20vw, 260px);
+              display: block;
+              margin: 0 auto 1.5vh auto;
+            " />
+            <p style="
+        font-size: clamp(1.2rem, 1.8vw, 2rem);
+        margin: 0;
+      ">
+              "If Writing C++ Coroutines Goes Over My Head, Where Do I Even Begin with Debugging?" by André Brand, ACCU
+              Conference 2025
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
 
     </div>
   </div>
 
   <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
   <script>
-    Reveal.initialize();
+    Reveal.initialize({
+      mouseWheel: true
+    });
+
+    // Allow browser zoom with Ctrl+scroll, but use mouseWheel for slide navigation without Ctrl
+    document.addEventListener('wheel', function (e) {
+      if (e.ctrlKey) {
+        // Allow browser zoom when Ctrl is pressed
+        e.stopPropagation();
+      }
+    }, { passive: false, capture: true });
   </script>
 
 </body>
