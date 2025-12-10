@@ -8,6 +8,14 @@
   <!-- Reveal.js CDN -->
   <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css">
+
+  <style>
+    /* Move slide numbers to bottom-left corner */
+    .reveal .slide-number {
+      left: 8px !important;
+      right: auto !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -298,6 +306,60 @@
 
       </section>
 
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 4vh;
+    text-align: center;
+  ">
+          What is coroutine?
+        </h2>
+
+        <div style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4vw;
+    max-width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  ">
+
+          <!-- First Image -->
+          <div style="flex: 1 1 40%; text-align: center;">
+            <img src="files/suspended_function.png" alt="First diagram" style="
+              width: clamp(280px, 35vw, 520px);
+              display: block;
+              margin: 0 auto 1.5vh auto;
+            " />
+            <p style="
+        font-size: clamp(1.2rem, 1.6vw, 2rem);
+        margin: 0;
+      ">
+              First image description
+            </p>
+          </div>
+
+          <!-- Second Image -->
+          <div style="flex: 1 1 40%; text-align: center;">
+            <img src="files/play_pause.png" alt="Second diagram" style="
+              width: clamp(280px, 35vw, 520px);
+              display: block;
+              margin: 0 auto 1.5vh auto;
+            " />
+            <p style="
+        font-size: clamp(1.2rem, 1.6vw, 2rem);
+        margin: 0;
+      ">
+              Second image description
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
 
     </div>
   </div>
@@ -305,7 +367,8 @@
   <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
   <script>
     Reveal.initialize({
-      mouseWheel: true
+      mouseWheel: true,
+      slideNumber: 'c/t'
     });
 
     // Allow browser zoom with Ctrl+scroll, but use mouseWheel for slide navigation without Ctrl
