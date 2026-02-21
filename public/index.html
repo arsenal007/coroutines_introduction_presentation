@@ -96,23 +96,23 @@
             </h2>
 
             <ul style="
-        font-size: clamp(1.6rem, 2.2vw, 2.8rem);
+        font-size: clamp(1.6rem, 2.0vw, 2.8rem);
         line-height: 1.5;
         padding-left: 2vw;
       ">
-              <li style="margin-bottom: 1.4vh;">
+              <li style="margin-bottom: 1.0vh;">
                 Growing interest in C++ coroutines in recent years
               </li>
 
-              <li style="margin-bottom: 1.4vh;">
+              <li style="margin-bottom: 1.0vh;">
                 Increasing number of talks, articles, and async-design materials
               </li>
 
-              <li style="margin-bottom: 1.4vh;">
+              <li style="margin-bottom: 1.0vh;">
                 This talk is inspired
               </li>
 
-              <li style="margin-bottom: 1.4vh;">
+              <li style="margin-bottom: 1.0vh;">
                 One of the clearest introductions to coroutine fundamentals
               </li>
             </ul>
@@ -337,7 +337,7 @@
         font-size: clamp(1.2rem, 1.6vw, 2rem);
         margin: 0;
       ">
-              First image description
+              Coroutine jumps to back to caller function
             </p>
           </div>
 
@@ -352,11 +352,507 @@
         font-size: clamp(1.2rem, 1.6vw, 2rem);
         margin: 0;
       ">
-              Second image description
+              Execution flow can be suspended and resumed
             </p>
           </div>
 
         </div>
+
+      </section>
+
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 3vh;
+    text-align: center;
+  ">
+          Promise, Awaitable, TaskHandler 🧩
+        </h2>
+
+        <div style="
+    display: flex;
+    justify-content: center;
+    gap: 2.5vw;
+    max-width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  ">
+
+          <!-- Promise Type -->
+          <div style="
+        flex: 1 1 30%;
+        text-align: center;
+        background: rgba(0,0,0,0.08);
+        padding: 3vh 1.5vw;
+        border-radius: 16px;
+      ">
+            <div style="font-size: 3rem; margin-bottom: 1vh;">📜</div>
+            <h3 style="font-size: clamp(1.6rem, 2.2vw, 2.6rem); margin-bottom: 1vh;">
+              Promise Type
+            </h3>
+            <p style="font-size: clamp(1.2rem, 1.5vw, 1.8rem); line-height: 1.5;">
+              Defines coroutine <strong>behavior</strong><br>
+              <span style="opacity: 0.85;">initial_suspend, final_suspend, get_return_object...</span>
+            </p>
+          </div>
+
+          <!-- Awaitable -->
+          <div style="
+        flex: 1 1 30%;
+        text-align: center;
+        background: rgba(0,0,0,0.08);
+        padding: 3vh 1.5vw;
+        border-radius: 16px;
+      ">
+            <div style="font-size: 3rem; margin-bottom: 1vh;">⏳</div>
+            <h3 style="font-size: clamp(1.6rem, 2.2vw, 2.6rem); margin-bottom: 1vh;">
+              Awaitable
+            </h3>
+            <p style="font-size: clamp(1.2rem, 1.5vw, 1.8rem); line-height: 1.5;">
+              Object for <code>co_await</code><br>
+              <span style="opacity: 0.85;">await_ready, await_suspend, await_resume</span>
+            </p>
+          </div>
+
+          <!-- TaskHandler -->
+          <div style="
+        flex: 1 1 30%;
+        text-align: center;
+        background: rgba(0,0,0,0.08);
+        padding: 3vh 1.5vw;
+        border-radius: 16px;
+      ">
+            <div style="font-size: 3rem; margin-bottom: 1vh;">🎯</div>
+            <h3 style="font-size: clamp(1.6rem, 2.2vw, 2.6rem); margin-bottom: 1vh;">
+              TaskHandler
+            </h3>
+            <p style="font-size: clamp(1.2rem, 1.5vw, 1.8rem); line-height: 1.5;">
+              <strong>Return type</strong> of coroutine<br>
+              <span style="opacity: 0.85;">Wraps coroutine_handle</span>
+            </p>
+          </div>
+
+        </div>
+
+        <p style="
+    font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+    margin-top: 4vh;
+    text-align: center;
+    background: rgba(0,0,0,0.06);
+    padding: 2vh 2vw;
+    border-radius: 12px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  ">
+          🔄 Coroutine → returns <strong>TaskHandler</strong> → contains <strong>coroutine_handle</strong> → points to frame
+        </p>
+
+      </section>
+
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 4vh;
+    text-align: center;
+  ">
+          Return Type (TaskHandler) 🎯
+        </h2>
+
+        <div style="
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4vw;
+    max-width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  ">
+
+          <!-- Left column: Regular Object -->
+          <div style="flex: 1 1 45%;">
+
+            <div style="
+        background: rgba(0,0,0,0.08);
+        padding: 3vh 2.5vw;
+        border-radius: 16px;
+        text-align: center;
+        margin-bottom: 2vh;
+      ">
+              <div style="font-size: 3rem; margin-bottom: 1vh;">📦</div>
+              <h3 style="font-size: clamp(1.6rem, 2vw, 2.4rem); margin-bottom: 1.5vh;">
+                Regular C++ Object
+              </h3>
+              <ul style="
+          font-size: clamp(1.3rem, 1.7vw, 2rem);
+          line-height: 1.6;
+          text-align: left;
+          padding-left: 2vw;
+        ">
+                <li style="margin-bottom: 1vh;">Constructors, destructors</li>
+                <li style="margin-bottom: 1vh;">Move/Copy semantics</li>
+                <li style="margin-bottom: 1vh;">Methods and fields</li>
+                <li>No special "coroutine magic"</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Right column: Caller Side -->
+          <div style="flex: 1 1 45%;">
+
+            <div style="
+        background: rgba(0,0,0,0.08);
+        padding: 3vh 2.5vw;
+        border-radius: 16px;
+        text-align: center;
+        margin-bottom: 2vh;
+      ">
+              <div style="font-size: 3rem; margin-bottom: 1vh;">👤</div>
+              <h3 style="font-size: clamp(1.6rem, 2vw, 2.4rem); margin-bottom: 1.5vh;">
+                Caller Side
+              </h3>
+              <ul style="
+          font-size: clamp(1.3rem, 1.7vw, 2rem);
+          line-height: 1.6;
+          text-align: left;
+          padding-left: 2vw;
+        ">
+                <li style="margin-bottom: 1vh;">Caller receives this object</li>
+                <li style="margin-bottom: 1vh;">Stores and manages it</li>
+                <li style="margin-bottom: 1vh;">Controls coroutine lifetime</li>
+                <li>Accesses results via Handler</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+        <p style="
+    font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+    text-align: center;
+    background: rgba(0,0,0,0.06);
+    padding: 2vh 2vw;
+    border-radius: 12px;
+    max-width: 80%;
+    margin: 2vh auto 0 auto;
+  ">
+          💡 Coroutine returns TaskHandler → caller stores and manages it
+        </p>
+
+      </section>
+
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 4vh;
+    text-align: center;
+  ">
+          promise_type 📜
+        </h2>
+
+        <div style="
+    max-width: 85%;
+    margin: 0 auto;
+  ">
+
+          <div style="
+        text-align: center;
+        background: rgba(0,0,0,0.08);
+        padding: 3vh 3vw;
+        border-radius: 16px;
+        margin-bottom: 3vh;
+      ">
+            <p style="font-size: clamp(1.5rem, 2vw, 2.4rem); line-height: 1.6;">
+              Defines <strong>coroutine behavior</strong> — lives inside the coroutine frame
+            </p>
+          </div>
+
+          <div style="
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+        flex-wrap: wrap;
+      ">
+
+            <div style="
+          flex: 1 1 30%;
+          background: rgba(255,255,255,0.1);
+          padding: 2vh 1.5vw;
+          border-radius: 12px;
+          text-align: center;
+        ">
+              <div style="font-size: 2rem; margin-bottom: 1vh;">🚀</div>
+              <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">initial_suspend()</code>
+              <p style="font-size: clamp(1rem, 1.2vw, 1.4rem); margin-top: 1vh; opacity: 0.9;">
+                Suspend at start?
+              </p>
+            </div>
+
+            <div style="
+          flex: 1 1 30%;
+          background: rgba(255,255,255,0.1);
+          padding: 2vh 1.5vw;
+          border-radius: 12px;
+          text-align: center;
+        ">
+              <div style="font-size: 2rem; margin-bottom: 1vh;">🏁</div>
+              <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">final_suspend()</code>
+              <p style="font-size: clamp(1rem, 1.2vw, 1.4rem); margin-top: 1vh; opacity: 0.9;">
+                Suspend at end?
+              </p>
+            </div>
+
+            <div style="
+          flex: 1 1 30%;
+          background: rgba(255,255,255,0.1);
+          padding: 2vh 1.5vw;
+          border-radius: 12px;
+          text-align: center;
+        ">
+              <div style="font-size: 2rem; margin-bottom: 1vh;">🎁</div>
+              <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">get_return_object()</code>
+              <p style="font-size: clamp(1rem, 1.2vw, 1.4rem); margin-top: 1vh; opacity: 0.9;">
+                Create TaskHandler
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 4vh;
+    text-align: center;
+  ">
+          Coroutine Keywords
+        </h2>
+
+        <div style="
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    max-width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  ">
+
+          <!-- co_await -->
+          <div style="
+        flex: 1 1 30%;
+        text-align: center;
+        background: rgba(255,255,255,0.1);
+        padding: 3vh 2vw;
+        border-radius: 12px;
+      ">
+            <div style="font-size: 3rem; margin-bottom: 1vh;">⏸️</div>
+            <code style="
+          font-size: clamp(1.8rem, 2.4vw, 2.8rem);
+          background: rgba(0,0,0,0.2);
+          padding: 0.3em 0.6em;
+          border-radius: 6px;
+        ">co_await</code>
+            <p style="font-size: clamp(1.4rem, 1.8vw, 2rem); margin-top: 2vh;">
+              Suspend until ready<br>
+              <span style="font-size: 0.85em; opacity: 0.9;">→ returns value</span>
+            </p>
+          </div>
+
+          <!-- co_yield -->
+          <div style="
+        flex: 1 1 30%;
+        text-align: center;
+        background: rgba(255,255,255,0.1);
+        padding: 3vh 2vw;
+        border-radius: 12px;
+      ">
+            <div style="font-size: 3rem; margin-bottom: 1vh;">📤</div>
+            <code style="
+          font-size: clamp(1.8rem, 2.4vw, 2.8rem);
+          background: rgba(0,0,0,0.2);
+          padding: 0.3em 0.6em;
+          border-radius: 6px;
+        ">co_yield</code>
+            <p style="font-size: clamp(1.4rem, 1.8vw, 2rem); margin-top: 2vh;">
+              Produce value & pause
+            </p>
+          </div>
+
+          <!-- co_return -->
+          <div style="
+        flex: 1 1 30%;
+        text-align: center;
+        background: rgba(255,255,255,0.1);
+        padding: 3vh 2vw;
+        border-radius: 12px;
+      ">
+            <div style="font-size: 3rem; margin-bottom: 1vh;">🏁</div>
+            <code style="
+          font-size: clamp(1.8rem, 2.4vw, 2.8rem);
+          background: rgba(0,0,0,0.2);
+          padding: 0.3em 0.6em;
+          border-radius: 6px;
+        ">co_return</code>
+            <p style="font-size: clamp(1.4rem, 1.8vw, 2rem); margin-top: 2vh;">
+              Complete & return
+            </p>
+          </div>
+
+        </div>
+
+        <p style="
+    font-size: clamp(1.5rem, 1.9vw, 2.2rem);
+    margin-top: 4vh;
+    text-align: center;
+  ">
+          ✨ Any of these keywords makes a function a coroutine
+        </p>
+
+      </section>
+
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 2vh;
+    text-align: center;
+  ">
+          Tasks vs Generators
+        </h2>
+
+        <p style="
+    font-size: clamp(1.3rem, 1.7vw, 2rem);
+    text-align: center;
+    margin-bottom: 4vh;
+    opacity: 0.85;
+  ">
+          ⚠️ Abstract distinction
+        </p>
+
+        <div style="
+    display: flex;
+    justify-content: center;
+    gap: 4vw;
+    max-width: 85%;
+    margin: 0 auto;
+  ">
+
+          <!-- Tasks -->
+          <div style="
+        flex: 1;
+        text-align: center;
+        background: rgba(0,0,0,0.08);
+        padding: 4vh 2vw;
+        border-radius: 16px;
+      ">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5vh;">📥</div>
+            <h3 style="font-size: clamp(2rem, 2.6vw, 3rem); margin-bottom: 1.5vh;">
+              Task
+            </h3>
+            <p style="font-size: clamp(1.4rem, 1.8vw, 2.2rem); line-height: 1.5;">
+              <strong>Receives</strong> data<br>
+              and processes it
+            </p>
+          </div>
+
+          <!-- Generators -->
+          <div style="
+        flex: 1;
+        text-align: center;
+        background: rgba(0,0,0,0.08);
+        padding: 4vh 2vw;
+        border-radius: 16px;
+      ">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5vh;">📤</div>
+            <h3 style="font-size: clamp(2rem, 2.6vw, 3rem); margin-bottom: 1.5vh;">
+              Generator
+            </h3>
+            <p style="font-size: clamp(1.4rem, 1.8vw, 2.2rem); line-height: 1.5;">
+              <strong>Produces</strong> data<br>
+              on demand
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    margin-bottom: 2vh;
+    text-align: center;
+  ">
+          🗺️ Map of Coroutine Land
+        </h2>
+
+        <svg viewBox="-30 0 730 420" style="max-width: 85%; height: auto; display: block; margin: 0 auto;">
+          <!-- Definitions for markers -->
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+            </marker>
+          </defs>
+
+          <!-- Caller box -->
+          <rect x="120" y="20" width="100" height="40" fill="white" stroke="#333" stroke-width="2"/>
+          <text x="170" y="46" text-anchor="middle" font-size="16" fill="#333">Caller</text>
+
+          <!-- Coroutine box -->
+          <rect x="480" y="20" width="100" height="40" fill="white" stroke="#333" stroke-width="2"/>
+          <text x="530" y="46" text-anchor="middle" font-size="16" fill="#333">Coroutine</text>
+
+          <!-- ReturnType diamond (blue) -->
+          <polygon points="170,120 240,160 170,200 100,160" fill="#a8b4e8" stroke="#5566aa" stroke-width="2"/>
+          <text x="170" y="165" text-anchor="middle" font-size="14" fill="#333">ReturnType</text>
+
+          <!-- Awaitable diamond (green) -->
+          <polygon points="530,120 600,160 530,200 460,160" fill="#90d4a0" stroke="#44aa55" stroke-width="2"/>
+          <text x="530" y="165" text-anchor="middle" font-size="14" fill="#333">Awaitable</text>
+
+          <!-- coroutine_handle parallelogram -->
+          <polygon points="280,250 450,250 420,300 250,300" fill="white" stroke="#333" stroke-width="2"/>
+          <text x="350" y="280" text-anchor="middle" font-size="14" fill="#333">coroutine_handle</text>
+
+          <!-- promise diamond (red/pink) -->
+          <polygon points="350,330 420,362 350,394 280,362" fill="#e8a0a0" stroke="#cc5555" stroke-width="2"/>
+          <text x="350" y="367" text-anchor="middle" font-size="14" fill="#333">promise</text>
+
+          <!-- Arrow: Caller → ReturnType -->
+          <line x1="170" y1="60" x2="170" y2="118" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+          <!-- Arrow: Coroutine → Awaitable -->
+          <line x1="530" y1="60" x2="530" y2="118" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+          <!-- Arrow: ReturnType → coroutine_handle (.handle) -->
+          <line x1="200" y1="200" x2="290" y2="248" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <text x="190" y="230" font-size="13" fill="#555">.handle</text>
+
+          <!-- Arrow: Awaitable → coroutine_handle (.await_suspend()) -->
+          <line x1="500" y1="200" x2="410" y2="248" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <text x="470" y="230" font-size="13" fill="#555">.await_suspend()</text>
+
+          <!-- Arrow: coroutine_handle ↔ promise (.promise() / ::from_promise()) -->
+          <line x1="330" y1="300" x2="330" y2="328" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <line x1="370" y1="328" x2="370" y2="300" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+          <text x="250" y="320" font-size="12" fill="#555">.promise()</text>
+          <text x="400" y="320" font-size="12" fill="#555">::from_promise()</text>
+
+          <!-- Dashed arrow: promise → ReturnType (get_return_object()) -->
+          <path d="M 280 362 Q 50 362 50 160 Q 50 120 100 155" stroke="#333" stroke-width="2" stroke-dasharray="6,4" fill="none" marker-end="url(#arrowhead)"/>
+          <text x="35" y="330" font-size="11" fill="#555">get_return_object()</text>
+
+        </svg>
 
       </section>
 
