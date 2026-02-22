@@ -68,7 +68,7 @@
             Keywords: <strong>co_await</strong>, <strong>co_yield</strong>, <strong>co_return</strong>
           </li>
           <li style="margin-bottom: 1.4vh;">Terminology: tasks and generators</li>
-          <li style="margin-bottom: 1.4vh;">Promise type, Awaitable, TaskHandler</li>
+          <li style="margin-bottom: 1.4vh;">Promise type, Awaitable, Handler</li>
           <li style="margin-bottom: 1.4vh;">Simple example</li>
         </ul>
 
@@ -367,7 +367,7 @@
     margin-bottom: 3vh;
     text-align: center;
   ">
-          Promise, Awaitable, TaskHandler 🧩
+          Promise, Awaitable, Handler 🧩
         </h2>
 
         <p style="
@@ -381,7 +381,7 @@
     margin-left: auto;
     margin-right: auto;
   ">
-          🔄 Coroutine → returns <strong>TaskHandler</strong> → contains <strong>coroutine_handle</strong> → points to frame
+          🔄 Coroutine → returns <strong>Handler</strong> → contains <strong>coroutine_handle</strong> → points to frame
         </p>
 
         <div style="
@@ -393,7 +393,7 @@
     flex-wrap: wrap;
   ">
 
-          <!-- TaskHandler -->
+          <!-- Handler -->
           <div style="
         flex: 1 1 30%;
         text-align: center;
@@ -403,7 +403,7 @@
       ">
             <div style="font-size: 3rem; margin-bottom: 1vh;">🎯</div>
             <h3 style="font-size: clamp(1.6rem, 2.2vw, 2.6rem); margin-bottom: 1vh;">
-              TaskHandler
+              Handler
             </h3>
             <p style="font-size: clamp(1.2rem, 1.5vw, 1.8rem); line-height: 1.5;">
               <strong>Return type</strong> of coroutine<br>
@@ -458,8 +458,20 @@
     margin-bottom: 4vh;
     text-align: center;
   ">
-          Return Type (TaskHandler) 🎯
+          Return Type (Handler) 🎯
         </h2>
+
+        <p style="
+    font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+    text-align: center;
+    background: rgba(0,0,0,0.06);
+    padding: 2vh 2vw;
+    border-radius: 12px;
+    max-width: 80%;
+    margin: 0 auto 3vh auto;
+  ">
+          💡 Coroutine returns Handler → caller stores and manages it
+        </p>
 
         <div style="
     display: flex;
@@ -531,17 +543,124 @@
 
         </div>
 
-        <p style="
-    font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+      </section>
+
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 3vh;
     text-align: center;
-    background: rgba(0,0,0,0.06);
-    padding: 2vh 2vw;
-    border-radius: 12px;
-    max-width: 80%;
-    margin: 2vh auto 0 auto;
   ">
-          💡 Coroutine returns TaskHandler → caller stores and manages it
+          Minimal Coroutine Example 🔬
+        </h2>
+
+        <p style="
+    font-size: clamp(1.1rem, 1.4vw, 1.6rem);
+    text-align: center;
+    background: rgba(0,0,0,0.08);
+    padding: 1.5vh 1.5vw;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 0 auto 3vh auto;
+  ">
+          Return type <strong>must</strong> have <code>promise_type</code>
         </p>
+
+        <div style="
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    max-width: 95%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  ">
+
+          <!-- nested class -->
+          <div style="flex: 1 1 28%;">
+            <p style="
+          font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+          opacity: 0.7;
+          margin-bottom: 1vh;
+          text-align: center;
+        ">nested class</p>
+            <pre style="
+          background: rgba(0,0,0,0.15);
+          padding: 2vh 1.5vw;
+          border-radius: 12px;
+          font-size: clamp(1rem, 1.2vw, 1.4rem);
+          line-height: 1.6;
+          text-align: left;
+          margin: 0;
+          overflow: auto;
+        "><code>class Handler {
+public:
+  class promise_type {
+    // methods...
+  };
+};</code></pre>
+          </div>
+
+          <!-- Handler via using -->
+          <div style="flex: 1 1 28%;">
+            <p style="
+          font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+          opacity: 0.7;
+          margin-bottom: 1vh;
+          text-align: center;
+        ">or via using</p>
+            <pre style="
+          background: rgba(0,0,0,0.15);
+          padding: 2vh 1.5vw;
+          border-radius: 12px;
+          font-size: clamp(1rem, 1.2vw, 1.4rem);
+          line-height: 1.6;
+          text-align: left;
+          margin: 0;
+          overflow: auto;
+        "><code>class Handler {
+public:
+  using promise_type = promise;
+};</code></pre>
+            <p style="
+          font-size: clamp(1.1rem, 1.4vw, 1.6rem);
+          margin-top: 2vh;
+          text-align: center;
+          opacity: 0.75;
+        ">
+              More detailed example: <code>simple.cpp</code>
+            </p>
+          </div>
+
+          <!-- coroutine body -->
+          <div style="flex: 1 1 28%;">
+            <p style="
+          font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+          opacity: 0.7;
+          margin-bottom: 1vh;
+          text-align: center;
+        ">coroutine — looks like a function</p>
+            <pre style="
+          background: rgba(0,0,0,0.15);
+          padding: 2vh 1.5vw;
+          border-radius: 12px;
+          font-size: clamp(1rem, 1.2vw, 1.4rem);
+          line-height: 1.6;
+          text-align: left;
+          margin: 0;
+          overflow: auto;
+        "><code>Handler hello() {
+  co_return; // ← makes it
+}             //   a coroutine
+
+int main() {
+  Handler h = hello();
+  // h manages lifetime
+}</code></pre>
+          </div>
+
+        </div>
 
       </section>
 
@@ -554,6 +673,14 @@
   ">
           Coroutine Keywords
         </h2>
+
+        <p style="
+    font-size: clamp(1.5rem, 1.9vw, 2.2rem);
+    margin-bottom: 3vh;
+    text-align: center;
+  ">
+          ✨ Any of these keywords makes a function a coroutine
+        </p>
 
         <div style="
     display: flex;
@@ -627,13 +754,6 @@
 
         </div>
 
-        <p style="
-    font-size: clamp(1.5rem, 1.9vw, 2.2rem);
-    margin-top: 4vh;
-    text-align: center;
-  ">
-          ✨ Any of these keywords makes a function a coroutine
-        </p>
 
       </section>
 
@@ -709,7 +829,7 @@
               <div style="font-size: 2rem; margin-bottom: 1vh;">🎁</div>
               <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">get_return_object()</code>
               <p style="font-size: clamp(1rem, 1.2vw, 1.4rem); margin-top: 1vh; opacity: 0.9;">
-                Create TaskHandler
+                Create Handler
               </p>
             </div>
 
