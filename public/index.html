@@ -843,6 +843,87 @@ int main() {
 
         <h2 style="
     font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 3vh;
+    text-align: center;
+  ">
+          Awaitable ⏳
+        </h2>
+
+        <div style="
+    text-align: center;
+    background: rgba(0,0,0,0.08);
+    padding: 2vh 3vw;
+    border-radius: 16px;
+    max-width: 80%;
+    margin: 0 auto 3vh auto;
+  ">
+          <p style="font-size: clamp(1.4rem, 1.8vw, 2.2rem); line-height: 1.6;">
+            Object passed to <code>co_await</code> — controls <strong>how</strong> suspension happens
+          </p>
+        </div>
+
+        <div style="
+    display: flex;
+    justify-content: center;
+    gap: 2.5vw;
+    max-width: 92%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  ">
+
+          <div style="
+        flex: 1 1 30%;
+        text-align: center;
+        background: rgba(255,255,255,0.1);
+        padding: 3vh 1.5vw;
+        border-radius: 12px;
+      ">
+            <div style="font-size: 2.5rem; margin-bottom: 1vh;">❓</div>
+            <code style="font-size: clamp(1.1rem, 1.4vw, 1.7rem);">await_ready()</code>
+            <p style="font-size: clamp(1.1rem, 1.3vw, 1.6rem); margin-top: 1.5vh; opacity: 0.9;">
+              Skip suspension?<br>
+              <span style="opacity: 0.75;">returns <code>bool</code></span>
+            </p>
+          </div>
+
+          <div style="
+        flex: 1 1 30%;
+        text-align: center;
+        background: rgba(255,255,255,0.1);
+        padding: 3vh 1.5vw;
+        border-radius: 12px;
+      ">
+            <div style="font-size: 2.5rem; margin-bottom: 1vh;">⏸️</div>
+            <code style="font-size: clamp(1.1rem, 1.4vw, 1.7rem);">await_suspend()</code>
+            <p style="font-size: clamp(1.1rem, 1.3vw, 1.6rem); margin-top: 1.5vh; opacity: 0.9;">
+              Called on suspension<br>
+              <span style="opacity: 0.75;">receives <code>coroutine_handle</code></span>
+            </p>
+          </div>
+
+          <div style="
+        flex: 1 1 30%;
+        text-align: center;
+        background: rgba(255,255,255,0.1);
+        padding: 3vh 1.5vw;
+        border-radius: 12px;
+      ">
+            <div style="font-size: 2.5rem; margin-bottom: 1vh;">▶️</div>
+            <code style="font-size: clamp(1.1rem, 1.4vw, 1.7rem);">await_resume()</code>
+            <p style="font-size: clamp(1.1rem, 1.3vw, 1.6rem); margin-top: 1.5vh; opacity: 0.9;">
+              Called on resume<br>
+              <span style="opacity: 0.75;">returns value to <code>co_await</code></span>
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
     margin-bottom: 2vh;
     text-align: center;
   ">
