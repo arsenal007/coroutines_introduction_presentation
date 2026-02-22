@@ -370,6 +370,20 @@
           Promise, Awaitable, TaskHandler 🧩
         </h2>
 
+        <p style="
+    font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+    margin-bottom: 3vh;
+    text-align: center;
+    background: rgba(0,0,0,0.06);
+    padding: 2vh 2vw;
+    border-radius: 12px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  ">
+          🔄 Coroutine → returns <strong>TaskHandler</strong> → contains <strong>coroutine_handle</strong> → points to frame
+        </p>
+
         <div style="
     display: flex;
     justify-content: center;
@@ -379,7 +393,7 @@
     flex-wrap: wrap;
   ">
 
-          <!-- Promise Type -->
+          <!-- TaskHandler -->
           <div style="
         flex: 1 1 30%;
         text-align: center;
@@ -387,13 +401,13 @@
         padding: 3vh 1.5vw;
         border-radius: 16px;
       ">
-            <div style="font-size: 3rem; margin-bottom: 1vh;">📜</div>
+            <div style="font-size: 3rem; margin-bottom: 1vh;">🎯</div>
             <h3 style="font-size: clamp(1.6rem, 2.2vw, 2.6rem); margin-bottom: 1vh;">
-              Promise Type
+              TaskHandler
             </h3>
             <p style="font-size: clamp(1.2rem, 1.5vw, 1.8rem); line-height: 1.5;">
-              Defines coroutine <strong>behavior</strong><br>
-              <span style="opacity: 0.85;">initial_suspend, final_suspend, get_return_object...</span>
+              <strong>Return type</strong> of coroutine<br>
+              <span style="opacity: 0.85;">Wraps coroutine_handle</span>
             </p>
           </div>
 
@@ -415,7 +429,7 @@
             </p>
           </div>
 
-          <!-- TaskHandler -->
+          <!-- Promise Type -->
           <div style="
         flex: 1 1 30%;
         text-align: center;
@@ -423,31 +437,17 @@
         padding: 3vh 1.5vw;
         border-radius: 16px;
       ">
-            <div style="font-size: 3rem; margin-bottom: 1vh;">🎯</div>
+            <div style="font-size: 3rem; margin-bottom: 1vh;">📜</div>
             <h3 style="font-size: clamp(1.6rem, 2.2vw, 2.6rem); margin-bottom: 1vh;">
-              TaskHandler
+              Promise Type
             </h3>
             <p style="font-size: clamp(1.2rem, 1.5vw, 1.8rem); line-height: 1.5;">
-              <strong>Return type</strong> of coroutine<br>
-              <span style="opacity: 0.85;">Wraps coroutine_handle</span>
+              Defines coroutine <strong>behavior</strong><br>
+              <span style="opacity: 0.85;">initial_suspend, final_suspend, get_return_object...</span>
             </p>
           </div>
 
         </div>
-
-        <p style="
-    font-size: clamp(1.4rem, 1.8vw, 2.2rem);
-    margin-top: 4vh;
-    text-align: center;
-    background: rgba(0,0,0,0.06);
-    padding: 2vh 2vw;
-    border-radius: 12px;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  ">
-          🔄 Coroutine → returns <strong>TaskHandler</strong> → contains <strong>coroutine_handle</strong> → points to frame
-        </p>
 
       </section>
 
@@ -552,88 +552,6 @@
     margin-bottom: 4vh;
     text-align: center;
   ">
-          promise_type 📜
-        </h2>
-
-        <div style="
-    max-width: 85%;
-    margin: 0 auto;
-  ">
-
-          <div style="
-        text-align: center;
-        background: rgba(0,0,0,0.08);
-        padding: 3vh 3vw;
-        border-radius: 16px;
-        margin-bottom: 3vh;
-      ">
-            <p style="font-size: clamp(1.5rem, 2vw, 2.4rem); line-height: 1.6;">
-              Defines <strong>coroutine behavior</strong> — lives inside the coroutine frame
-            </p>
-          </div>
-
-          <div style="
-        display: flex;
-        justify-content: center;
-        gap: 2vw;
-        flex-wrap: wrap;
-      ">
-
-            <div style="
-          flex: 1 1 30%;
-          background: rgba(255,255,255,0.1);
-          padding: 2vh 1.5vw;
-          border-radius: 12px;
-          text-align: center;
-        ">
-              <div style="font-size: 2rem; margin-bottom: 1vh;">🚀</div>
-              <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">initial_suspend()</code>
-              <p style="font-size: clamp(1rem, 1.2vw, 1.4rem); margin-top: 1vh; opacity: 0.9;">
-                Suspend at start?
-              </p>
-            </div>
-
-            <div style="
-          flex: 1 1 30%;
-          background: rgba(255,255,255,0.1);
-          padding: 2vh 1.5vw;
-          border-radius: 12px;
-          text-align: center;
-        ">
-              <div style="font-size: 2rem; margin-bottom: 1vh;">🏁</div>
-              <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">final_suspend()</code>
-              <p style="font-size: clamp(1rem, 1.2vw, 1.4rem); margin-top: 1vh; opacity: 0.9;">
-                Suspend at end?
-              </p>
-            </div>
-
-            <div style="
-          flex: 1 1 30%;
-          background: rgba(255,255,255,0.1);
-          padding: 2vh 1.5vw;
-          border-radius: 12px;
-          text-align: center;
-        ">
-              <div style="font-size: 2rem; margin-bottom: 1vh;">🎁</div>
-              <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">get_return_object()</code>
-              <p style="font-size: clamp(1rem, 1.2vw, 1.4rem); margin-top: 1vh; opacity: 0.9;">
-                Create TaskHandler
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      <section data-background-color="#e3dfd4">
-
-        <h2 style="
-    font-size: clamp(2.4rem, 4vw, 4rem);
-    margin-bottom: 4vh;
-    text-align: center;
-  ">
           Coroutine Keywords
         </h2>
 
@@ -716,6 +634,88 @@
   ">
           ✨ Any of these keywords makes a function a coroutine
         </p>
+
+      </section>
+
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 4vh;
+    text-align: center;
+  ">
+          promise_type 📜
+        </h2>
+
+        <div style="
+    max-width: 85%;
+    margin: 0 auto;
+  ">
+
+          <div style="
+        text-align: center;
+        background: rgba(0,0,0,0.08);
+        padding: 3vh 3vw;
+        border-radius: 16px;
+        margin-bottom: 3vh;
+      ">
+            <p style="font-size: clamp(1.5rem, 2vw, 2.4rem); line-height: 1.6;">
+              Defines <strong>coroutine behavior</strong> — lives inside the coroutine frame
+            </p>
+          </div>
+
+          <div style="
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+        flex-wrap: wrap;
+      ">
+
+            <div style="
+          flex: 1 1 30%;
+          background: rgba(255,255,255,0.1);
+          padding: 2vh 1.5vw;
+          border-radius: 12px;
+          text-align: center;
+        ">
+              <div style="font-size: 2rem; margin-bottom: 1vh;">🚀</div>
+              <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">initial_suspend()</code>
+              <p style="font-size: clamp(1rem, 1.2vw, 1.4rem); margin-top: 1vh; opacity: 0.9;">
+                Suspend at start?
+              </p>
+            </div>
+
+            <div style="
+          flex: 1 1 30%;
+          background: rgba(255,255,255,0.1);
+          padding: 2vh 1.5vw;
+          border-radius: 12px;
+          text-align: center;
+        ">
+              <div style="font-size: 2rem; margin-bottom: 1vh;">🏁</div>
+              <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">final_suspend()</code>
+              <p style="font-size: clamp(1rem, 1.2vw, 1.4rem); margin-top: 1vh; opacity: 0.9;">
+                Suspend at end?
+              </p>
+            </div>
+
+            <div style="
+          flex: 1 1 30%;
+          background: rgba(255,255,255,0.1);
+          padding: 2vh 1.5vw;
+          border-radius: 12px;
+          text-align: center;
+        ">
+              <div style="font-size: 2rem; margin-bottom: 1vh;">🎁</div>
+              <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">get_return_object()</code>
+              <p style="font-size: clamp(1rem, 1.2vw, 1.4rem); margin-top: 1vh; opacity: 0.9;">
+                Create TaskHandler
+              </p>
+            </div>
+
+          </div>
+
+        </div>
 
       </section>
 
