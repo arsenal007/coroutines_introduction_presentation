@@ -32,14 +32,14 @@
         </h1>
 
         <p style="
-    font-size: clamp(1.6rem, 2.8vw, 3.2rem);
+    font-size: clamp(1.6rem, 2.2vw, 2.6rem);
     margin: 0;
   ">
           <strong>Vasyl Kuzmenko</strong>
         </p>
 
         <p style="
-    font-size: clamp(1.6rem, 2.8vw, 3.2rem);
+    font-size: clamp(1.6rem, 2.2vw, 2.6rem);
     margin-top: 2vh;
   ">
           <strong>2026</strong>
@@ -52,24 +52,21 @@
 
         <h2 style="
     font-size: clamp(2.4rem, 4vw, 4rem);
-    margin-bottom: 6vh;    /* було ~3vh — збільшено вдвічі */
+    margin-bottom: 4vh;
   ">
           Agenda
         </h2>
+
         <ul style="
-    font-size: clamp(1.8rem, 2.6vw, 3rem);
-    line-height: 1.1;
+    font-size: clamp(1.6rem, 2.2vw, 2.6rem);
+    line-height: 1.5;
     padding-left: 2vw;
 ">
-          <li style="margin-bottom: 1.4vh;">Inspiration</li>
-          <li style="margin-bottom: 1.4vh;">Event-driven application, asynchronous running</li>
-          <li style="margin-bottom: 1.4vh;">What is coroutine?</li>
-          <li style="margin-bottom: 1.4vh;">
-            Keywords: <strong>co_await</strong>, <strong>co_yield</strong>, <strong>co_return</strong>
-          </li>
-          <li style="margin-bottom: 1.4vh;">Terminology: tasks and generators</li>
-          <li style="margin-bottom: 1.4vh;">Promise type, Awaitable, Handler</li>
-          <li style="margin-bottom: 1.4vh;">Simple example</li>
+          <li style="margin-bottom: 1.4vh;">💡 Motivation</li>
+          <li style="margin-bottom: 1.4vh;">❓ What is a Coroutine?</li>
+          <li style="margin-bottom: 1.4vh;">🧩 Key Concepts</li>
+          <li style="margin-bottom: 1.4vh;">🗺️ Putting It Together</li>
+          <li style="margin-bottom: 1.4vh;">🔧 Practical Examples</li>
         </ul>
 
       </section>
@@ -96,7 +93,7 @@
             </h2>
 
             <ul style="
-        font-size: clamp(1.6rem, 2.0vw, 2.8rem);
+        font-size: clamp(1.6rem, 2.2vw, 2.6rem);
         line-height: 1.5;
         padding-left: 2vw;
       ">
@@ -131,7 +128,7 @@
            " />
 
             <p style="
-        font-size: clamp(1.2rem, 1.8vw, 2rem);
+        font-size: clamp(1.4rem, 1.8vw, 2.2rem);
         margin: 0;
       ">
               "A Diagrammatic Coroutine Cheat Sheet" by Andreas Weis, CppCon 2022
@@ -164,7 +161,7 @@
             </h2>
 
             <ul style="
-        font-size: clamp(1.6rem, 2.2vw, 2.8rem);
+        font-size: clamp(1.6rem, 2.2vw, 2.6rem);
         line-height: 1.6;
         padding-left: 2vw;
       ">
@@ -184,7 +181,7 @@
            " />
 
             <p style="
-        font-size: clamp(1.2rem, 1.6vw, 2rem);
+        font-size: clamp(1.4rem, 1.8vw, 2.2rem);
         margin: 0;
       ">
               Event-driven model illustration
@@ -219,7 +216,7 @@
             </h2>
 
             <p style="
-        font-size: clamp(1.8rem, 2.4vw, 3rem);
+        font-size: clamp(1.8rem, 2.4vw, 2.8rem);
         line-height: 1.6;
         padding-left: 2vw;
       ">
@@ -239,7 +236,7 @@
            " />
 
             <p style="
-        font-size: clamp(1.2rem, 1.6vw, 2rem);
+        font-size: clamp(1.4rem, 1.8vw, 2.2rem);
         margin: 0;
       ">
               Typical embedded event-driven architecture
@@ -279,7 +276,7 @@
               margin: 0 auto 1.5vh auto;
             " />
             <p style="
-        font-size: clamp(1.2rem, 1.6vw, 2rem);
+        font-size: clamp(1.4rem, 1.8vw, 2.2rem);
         margin: 0;
       ">
               Abstraction with a Restaurant Kitchen
@@ -294,7 +291,7 @@
               margin: 0 auto 1.5vh auto;
             " />
             <p style="
-        font-size: clamp(1.2rem, 1.8vw, 2rem);
+        font-size: clamp(1.4rem, 1.8vw, 2.2rem);
         margin: 0;
       ">
               "If Writing C++ Coroutines Goes Over My Head, Where Do I Even Begin with Debugging?" by André Brand, ACCU
@@ -334,7 +331,7 @@
               margin: 0 auto 1.5vh auto;
             " />
             <p style="
-        font-size: clamp(1.2rem, 1.6vw, 2rem);
+        font-size: clamp(1.4rem, 1.8vw, 2.2rem);
         margin: 0;
       ">
               Coroutine jumps to back to caller function
@@ -349,7 +346,7 @@
               margin: 0 auto 1.5vh auto;
             " />
             <p style="
-        font-size: clamp(1.2rem, 1.6vw, 2rem);
+        font-size: clamp(1.4rem, 1.8vw, 2.2rem);
         margin: 0;
       ">
               Execution flow can be suspended and resumed
@@ -405,7 +402,7 @@
             <h3 style="font-size: clamp(1.6rem, 2.2vw, 2.6rem); margin-bottom: 0.5rem;">
               TaskHandler
             </h3>
-            <p style="font-size: clamp(1.2rem, 1.5vw, 1.8rem); line-height: 1.5;">
+            <p style="font-size: clamp(1.4rem, 1.8vw, 2.2rem); line-height: 1.5;">
               <strong>Return type</strong> of coroutine<br>
               <span style="opacity: 0.85;">Wraps coroutine_handle</span>
             </p>
@@ -423,7 +420,7 @@
             <h3 style="font-size: clamp(1.6rem, 2.2vw, 2.6rem); margin-bottom: 0.5rem;">
               Awaitable
             </h3>
-            <p style="font-size: clamp(1.2rem, 1.5vw, 1.8rem); line-height: 1.5;">
+            <p style="font-size: clamp(1.4rem, 1.8vw, 2.2rem); line-height: 1.5;">
               Object for <code>co_await</code><br>
               <span style="opacity: 0.85;">await_ready, await_suspend, await_resume</span>
             </p>
@@ -441,7 +438,7 @@
             <h3 style="font-size: clamp(1.6rem, 2.2vw, 2.6rem); margin-bottom: 0.5rem;">
               Promise Type
             </h3>
-            <p style="font-size: clamp(1.2rem, 1.5vw, 1.8rem); line-height: 1.5;">
+            <p style="font-size: clamp(1.4rem, 1.8vw, 2.2rem); line-height: 1.5;">
               Defines coroutine <strong>behavior</strong><br>
               <span style="opacity: 0.85;">initial_suspend, final_suspend, get_return_object...</span>
             </p>
@@ -494,11 +491,11 @@
         margin-bottom: 2vh;
       ">
               <div style="font-size: 3rem; margin-bottom: 1vh;">📦</div>
-              <h3 style="font-size: clamp(1.6rem, 2vw, 2.4rem); margin-bottom: 1.5vh;">
+              <h3 style="font-size: clamp(1.8rem, 2.4vw, 2.8rem); margin-bottom: 1.5vh;">
                 Regular C++ Object
               </h3>
               <ul style="
-          font-size: clamp(1.3rem, 1.7vw, 2rem);
+          font-size: clamp(1.4rem, 1.8vw, 2.2rem);
           line-height: 1.6;
           text-align: left;
           padding-left: 2vw;
@@ -523,11 +520,11 @@
         margin-bottom: 2vh;
       ">
               <div style="font-size: 3rem; margin-bottom: 1vh;">👤</div>
-              <h3 style="font-size: clamp(1.6rem, 2vw, 2.4rem); margin-bottom: 1.5vh;">
+              <h3 style="font-size: clamp(1.8rem, 2.4vw, 2.8rem); margin-bottom: 1.5vh;">
                 Caller Side
               </h3>
               <ul style="
-          font-size: clamp(1.3rem, 1.7vw, 2rem);
+          font-size: clamp(1.4rem, 1.8vw, 2.2rem);
           line-height: 1.6;
           text-align: left;
           padding-left: 2vw;
@@ -549,7 +546,7 @@
 
         <h2 style="
     font-size: clamp(2.4rem, 4vw, 4rem);
-    margin-bottom: 3vh;
+    margin-bottom: 1.5vh;
     text-align: center;
   ">
           Minimal Coroutine Example 🔬
@@ -559,10 +556,10 @@
     font-size: clamp(1.1rem, 1.4vw, 1.6rem);
     text-align: center;
     background: rgba(0,0,0,0.08);
-    padding: 1.5vh 1.5vw;
+    padding: 0.8vh 1.5vw;
     border-radius: 10px;
     max-width: 80%;
-    margin: 0 auto 3vh auto;
+    margin: 0 auto 1.5vh auto;
   ">
           Return type <strong>must</strong> have <code>promise_type</code>
         </p>
@@ -580,16 +577,16 @@
           <!-- nested class -->
           <div style="flex: 1 1 28%;">
             <p style="
-          font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+          font-size: clamp(1.1rem, 1.4vw, 1.6rem);
           opacity: 0.7;
-          margin-bottom: 1vh;
+          margin-bottom: 0.5vh;
           text-align: center;
         ">nested class</p>
             <pre style="
           background: rgba(0,0,0,0.15);
-          padding: 2vh 1.5vw;
+          padding: 1vh 1.5vw;
           border-radius: 12px;
-          font-size: clamp(1rem, 1.2vw, 1.4rem);
+          font-size: clamp(1.1rem, 1.4vw, 1.6rem);
           line-height: 1.6;
           text-align: left;
           margin: 0;
@@ -605,16 +602,16 @@ public:
           <!-- Handler via using -->
           <div style="flex: 1 1 28%;">
             <p style="
-          font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+          font-size: clamp(1.1rem, 1.4vw, 1.6rem);
           opacity: 0.7;
-          margin-bottom: 1vh;
+          margin-bottom: 0.5vh;
           text-align: center;
         ">or via using</p>
             <pre style="
           background: rgba(0,0,0,0.15);
-          padding: 2vh 1.5vw;
+          padding: 1vh 1.5vw;
           border-radius: 12px;
-          font-size: clamp(1rem, 1.2vw, 1.4rem);
+          font-size: clamp(1.1rem, 1.4vw, 1.6rem);
           line-height: 1.6;
           text-align: left;
           margin: 0;
@@ -625,7 +622,7 @@ public:
 };</code></pre>
             <p style="
           font-size: clamp(1.1rem, 1.4vw, 1.6rem);
-          margin-top: 2vh;
+          margin-top: 1vh;
           text-align: center;
           opacity: 0.75;
         ">
@@ -636,16 +633,16 @@ public:
           <!-- coroutine body -->
           <div style="flex: 1 1 28%;">
             <p style="
-          font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+          font-size: clamp(1.1rem, 1.4vw, 1.6rem);
           opacity: 0.7;
-          margin-bottom: 1vh;
+          margin-bottom: 0.5vh;
           text-align: center;
         ">coroutine — looks like a function</p>
             <pre style="
           background: rgba(0,0,0,0.15);
-          padding: 2vh 1.5vw;
+          padding: 1vh 1.5vw;
           border-radius: 12px;
-          font-size: clamp(1rem, 1.2vw, 1.4rem);
+          font-size: clamp(1.1rem, 1.4vw, 1.6rem);
           line-height: 1.6;
           text-align: left;
           margin: 0;
@@ -675,7 +672,7 @@ int main() {
         </h2>
 
         <p style="
-    font-size: clamp(1.5rem, 1.9vw, 2.2rem);
+    font-size: clamp(1.6rem, 2.2vw, 2.6rem);
     margin-bottom: 3vh;
     text-align: center;
   ">
@@ -706,7 +703,7 @@ int main() {
           padding: 0.3em 0.6em;
           border-radius: 6px;
         ">co_await</code>
-            <p style="font-size: clamp(1.4rem, 1.8vw, 2rem); margin-top: 1rem;">
+            <p style="font-size: clamp(1.4rem, 1.8vw, 2.2rem); margin-top: 1rem;">
               Suspend until ready<br>
               <span style="font-size: 0.85em; opacity: 0.9;">→ returns value</span>
             </p>
@@ -727,7 +724,7 @@ int main() {
           padding: 0.3em 0.6em;
           border-radius: 6px;
         ">co_yield</code>
-            <p style="font-size: clamp(1.4rem, 1.8vw, 2rem); margin-top: 1rem;">
+            <p style="font-size: clamp(1.4rem, 1.8vw, 2.2rem); margin-top: 1rem;">
               Produce value & pause
             </p>
           </div>
@@ -747,7 +744,7 @@ int main() {
           padding: 0.3em 0.6em;
           border-radius: 6px;
         ">co_return</code>
-            <p style="font-size: clamp(1.4rem, 1.8vw, 2rem); margin-top: 1rem;">
+            <p style="font-size: clamp(1.4rem, 1.8vw, 2.2rem); margin-top: 1rem;">
               Complete & return
             </p>
           </div>
@@ -779,8 +776,8 @@ int main() {
         border-radius: 16px;
         margin-bottom: 2rem;
       ">
-            <p style="font-size: clamp(1.5rem, 2vw, 2.4rem); line-height: 1.6;">
-              Defines <strong>coroutine behavior</strong> — lives inside the coroutine frame
+            <p style="font-size: clamp(1.6rem, 2.2vw, 2.6rem); line-height: 1.6;">
+              Defines <strong>coroutine behavior</strong>, lives inside the coroutine frame
             </p>
           </div>
 
@@ -800,7 +797,7 @@ int main() {
         ">
               <div style="font-size: 2rem; margin-bottom: 0.5rem;">🚀</div>
               <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">initial_suspend()</code>
-              <p style="font-size: clamp(1rem, 1.2vw, 1.4rem); margin-top: 0.5rem; opacity: 0.9;">
+              <p style="font-size: clamp(1.1rem, 1.4vw, 1.6rem); margin-top: 0.5rem; opacity: 0.9;">
                 Suspend at start?
               </p>
             </div>
@@ -814,7 +811,7 @@ int main() {
         ">
               <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏁</div>
               <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">final_suspend()</code>
-              <p style="font-size: clamp(1rem, 1.2vw, 1.4rem); margin-top: 0.5rem; opacity: 0.9;">
+              <p style="font-size: clamp(1.1rem, 1.4vw, 1.6rem); margin-top: 0.5rem; opacity: 0.9;">
                 Suspend at end?
               </p>
             </div>
@@ -828,7 +825,7 @@ int main() {
         ">
               <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎁</div>
               <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">get_return_object()</code>
-              <p style="font-size: clamp(1rem, 1.2vw, 1.4rem); margin-top: 0.5rem; opacity: 0.9;">
+              <p style="font-size: clamp(1.1rem, 1.4vw, 1.6rem); margin-top: 0.5rem; opacity: 0.9;">
                 Create TaskHandler
               </p>
             </div>
@@ -843,7 +840,7 @@ int main() {
 
         <h2 style="
     font-size: clamp(2.4rem, 4vw, 4rem);
-    margin-bottom: 3vh;
+    margin-bottom: 1.5vh;
     text-align: center;
   ">
           Awaitable ⏳
@@ -852,13 +849,13 @@ int main() {
         <div style="
     text-align: center;
     background: rgba(0,0,0,0.08);
-    padding: 2vh 3vw;
+    padding: 1vh 3vw;
     border-radius: 16px;
     max-width: 80%;
-    margin: 0 auto 3vh auto;
+    margin: 0 auto 1.5vh auto;
   ">
           <p style="font-size: clamp(1.4rem, 1.8vw, 2.2rem); line-height: 1.6;">
-            Object passed to <code>co_await</code> — controls <strong>how</strong> suspension happens
+            Object passed to <code>co_await</code>, controls <strong>how</strong> suspension happens
           </p>
         </div>
 
@@ -875,12 +872,12 @@ int main() {
         flex: 1 1 30%;
         text-align: center;
         background: rgba(255,255,255,0.1);
-        padding: 3vh 1.5vw;
+        padding: 1.5vh 1.5vw;
         border-radius: 12px;
       ">
-            <div style="font-size: 2.5rem; margin-bottom: 1vh;">❓</div>
-            <code style="font-size: clamp(1.1rem, 1.4vw, 1.7rem);">await_ready()</code>
-            <p style="font-size: clamp(1.1rem, 1.3vw, 1.6rem); margin-top: 1.5vh; opacity: 0.9;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5vh;">❓</div>
+            <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">await_ready()</code>
+            <p style="font-size: clamp(1.1rem, 1.4vw, 1.6rem); margin-top: 0.8vh; opacity: 0.9;">
               Skip suspension?<br>
               <span style="opacity: 0.75;">returns <code>bool</code></span>
             </p>
@@ -890,12 +887,12 @@ int main() {
         flex: 1 1 30%;
         text-align: center;
         background: rgba(255,255,255,0.1);
-        padding: 3vh 1.5vw;
+        padding: 1.5vh 1.5vw;
         border-radius: 12px;
       ">
-            <div style="font-size: 2.5rem; margin-bottom: 1vh;">⏸️</div>
-            <code style="font-size: clamp(1.1rem, 1.4vw, 1.7rem);">await_suspend()</code>
-            <p style="font-size: clamp(1.1rem, 1.3vw, 1.6rem); margin-top: 1.5vh; opacity: 0.9;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5vh;">⏸️</div>
+            <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">await_suspend()</code>
+            <p style="font-size: clamp(1.1rem, 1.4vw, 1.6rem); margin-top: 0.8vh; opacity: 0.9;">
               Called on suspension<br>
               <span style="opacity: 0.75;">receives <code>coroutine_handle</code></span>
             </p>
@@ -905,12 +902,12 @@ int main() {
         flex: 1 1 30%;
         text-align: center;
         background: rgba(255,255,255,0.1);
-        padding: 3vh 1.5vw;
+        padding: 1.5vh 1.5vw;
         border-radius: 12px;
       ">
-            <div style="font-size: 2.5rem; margin-bottom: 1vh;">▶️</div>
-            <code style="font-size: clamp(1.1rem, 1.4vw, 1.7rem);">await_resume()</code>
-            <p style="font-size: clamp(1.1rem, 1.3vw, 1.6rem); margin-top: 1.5vh; opacity: 0.9;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5vh;">▶️</div>
+            <code style="font-size: clamp(1.1rem, 1.4vw, 1.6rem);">await_resume()</code>
+            <p style="font-size: clamp(1.1rem, 1.4vw, 1.6rem); margin-top: 0.8vh; opacity: 0.9;">
               Called on resume<br>
               <span style="opacity: 0.75;">returns value to <code>co_await</code></span>
             </p>
@@ -931,7 +928,7 @@ int main() {
         </h2>
 
         <p style="
-    font-size: clamp(1.3rem, 1.7vw, 2rem);
+    font-size: clamp(1.4rem, 1.8vw, 2.2rem);
     text-align: center;
     margin-bottom: 4vh;
     opacity: 0.85;
@@ -956,7 +953,7 @@ int main() {
         border-radius: 16px;
       ">
             <div style="font-size: 3.5rem; margin-bottom: 1.5vh;">📥</div>
-            <h3 style="font-size: clamp(2rem, 2.6vw, 3rem); margin-bottom: 1.5vh;">
+            <h3 style="font-size: clamp(1.8rem, 2.4vw, 2.8rem); margin-bottom: 1.5vh;">
               Task
             </h3>
             <p style="font-size: clamp(1.4rem, 1.8vw, 2.2rem); line-height: 1.5;">
@@ -974,7 +971,7 @@ int main() {
         border-radius: 16px;
       ">
             <div style="font-size: 3.5rem; margin-bottom: 1.5vh;">📤</div>
-            <h3 style="font-size: clamp(2rem, 2.6vw, 3rem); margin-bottom: 1.5vh;">
+            <h3 style="font-size: clamp(1.8rem, 2.4vw, 2.8rem); margin-bottom: 1.5vh;">
               Generator
             </h3>
             <p style="font-size: clamp(1.4rem, 1.8vw, 2.2rem); line-height: 1.5;">
@@ -990,7 +987,105 @@ int main() {
       <section data-background-color="#e3dfd4">
 
         <h2 style="
-    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 6vh;
+    text-align: center;
+  ">
+          Coroutine Data Flow
+        </h2>
+
+        <div style="
+    display: flex;
+    justify-content: center;
+    gap: 6vw;
+    max-width: 85%;
+    margin: 0 auto;
+    align-items: center;
+  ">
+
+          <!-- Caller ↔ Handler -->
+          <div style="flex: 1 1 25%; display: flex; flex-direction: column; align-items: center; gap: 2vh;">
+            <div style="
+          background: white;
+          border: 2px solid #333;
+          border-radius: 8px;
+          padding: 1.5vh 2vw;
+          font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+          text-align: center;
+          width: 100%;
+          box-sizing: border-box;
+        ">Caller</div>
+            <div style="font-size: 2.5rem; line-height: 1;">⇕</div>
+            <div style="
+          background: #a8b4e8;
+          border: 2px solid #5566aa;
+          border-radius: 8px;
+          padding: 1.5vh 2vw;
+          font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+          text-align: center;
+          width: 100%;
+          box-sizing: border-box;
+        ">Handler</div>
+          </div>
+
+          <!-- coroutine_handle ↔ promise -->
+          <div style="flex: 1 1 25%; display: flex; flex-direction: column; align-items: center; gap: 2vh;">
+            <div style="
+          background: white;
+          border: 2px solid #333;
+          border-radius: 8px;
+          padding: 1.5vh 2vw;
+          font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+          text-align: center;
+          width: 100%;
+          box-sizing: border-box;
+        ">coroutine_handle</div>
+            <div style="font-size: 2.5rem; line-height: 1;">⇕</div>
+            <div style="
+          background: #e8a0a0;
+          border: 2px solid #cc5555;
+          border-radius: 8px;
+          padding: 1.5vh 2vw;
+          font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+          text-align: center;
+          width: 100%;
+          box-sizing: border-box;
+        ">promise</div>
+          </div>
+
+          <!-- Coroutine ↔ Awaitable -->
+          <div style="flex: 1 1 25%; display: flex; flex-direction: column; align-items: center; gap: 2vh;">
+            <div style="
+          background: white;
+          border: 2px solid #333;
+          border-radius: 8px;
+          padding: 1.5vh 2vw;
+          font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+          text-align: center;
+          width: 100%;
+          box-sizing: border-box;
+        ">Coroutine</div>
+            <div style="font-size: 2.5rem; line-height: 1;">⇕</div>
+            <div style="
+          background: #90d4a0;
+          border: 2px solid #44aa55;
+          border-radius: 8px;
+          padding: 1.5vh 2vw;
+          font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+          text-align: center;
+          width: 100%;
+          box-sizing: border-box;
+        ">Awaitable</div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
     margin-bottom: 2vh;
     text-align: center;
   ">
@@ -1013,9 +1108,9 @@ int main() {
           <rect x="480" y="20" width="100" height="40" fill="white" stroke="#333" stroke-width="2"/>
           <text x="530" y="46" text-anchor="middle" font-size="16" fill="#333">Coroutine</text>
 
-          <!-- ReturnType diamond (blue) -->
+          <!-- Handler diamond (blue) -->
           <polygon points="170,120 240,160 170,200 100,160" fill="#a8b4e8" stroke="#5566aa" stroke-width="2"/>
-          <text x="170" y="165" text-anchor="middle" font-size="14" fill="#333">ReturnType</text>
+          <text x="170" y="165" text-anchor="middle" font-size="14" fill="#333">Handler</text>
 
           <!-- Awaitable diamond (green) -->
           <polygon points="530,120 600,160 530,200 460,160" fill="#90d4a0" stroke="#44aa55" stroke-width="2"/>
@@ -1029,13 +1124,13 @@ int main() {
           <polygon points="350,330 420,362 350,394 280,362" fill="#e8a0a0" stroke="#cc5555" stroke-width="2"/>
           <text x="350" y="367" text-anchor="middle" font-size="14" fill="#333">promise</text>
 
-          <!-- Arrow: Caller → ReturnType -->
+          <!-- Arrow: Caller → Handler -->
           <line x1="170" y1="60" x2="170" y2="118" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
 
           <!-- Arrow: Coroutine → Awaitable -->
           <line x1="530" y1="60" x2="530" y2="118" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
 
-          <!-- Arrow: ReturnType → coroutine_handle (.handle) -->
+          <!-- Arrow: Handler → coroutine_handle (.handle) -->
           <line x1="200" y1="200" x2="290" y2="248" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
           <text x="190" y="230" font-size="13" fill="#555">.handle</text>
 
@@ -1049,11 +1144,160 @@ int main() {
           <text x="250" y="320" font-size="12" fill="#555">.promise()</text>
           <text x="400" y="320" font-size="12" fill="#555">::from_promise()</text>
 
-          <!-- Dashed arrow: promise → ReturnType (get_return_object()) -->
+          <!-- Dashed arrow: promise → Handler (get_return_object()) -->
           <path d="M 280 362 Q 50 362 50 160 Q 50 120 100 155" stroke="#333" stroke-width="2" stroke-dasharray="6,4" fill="none" marker-end="url(#arrowhead)"/>
           <text x="35" y="330" font-size="11" fill="#555">get_return_object()</text>
 
         </svg>
+
+      </section>
+
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 2vh;
+    text-align: center;
+  ">
+          Symmetric Transfer
+        </h2>
+
+        <!-- Schematic: A suspends, B resumes -->
+        <div style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    max-width: 88%;
+    margin: 0 auto 4vh auto;
+  ">
+
+          <!-- Coroutine A -->
+          <div style="
+          background: rgba(0,0,0,0.08);
+          border-radius: 12px;
+          padding: 2vh 2.5vw;
+          text-align: center;
+          min-width: 14vw;
+        ">
+            <div style="font-size: clamp(1.4rem, 1.8vw, 2.2rem);">Coroutine A</div>
+            <div style="font-size: clamp(1.1rem, 1.4vw, 1.6rem); opacity: 0.7; margin-top: 0.5vh;">⏸ suspends</div>
+          </div>
+
+          <!-- Arrow + await_suspend -->
+          <div style="text-align: center; flex: 1;">
+            <div style="font-size: clamp(1.1rem, 1.4vw, 1.6rem); opacity: 0.7; margin-bottom: 0.5vh;">
+              <code>await_suspend()</code> returns
+            </div>
+            <div style="font-size: 2.5rem; letter-spacing: -0.1em;">──────▶</div>
+            <div style="font-size: clamp(1.1rem, 1.4vw, 1.6rem); margin-top: 0.5vh;">
+              <code>coroutine_handle&lt;B&gt;</code>
+            </div>
+          </div>
+
+          <!-- Coroutine B -->
+          <div style="
+          background: rgba(0,0,0,0.08);
+          border-radius: 12px;
+          padding: 2vh 2.5vw;
+          text-align: center;
+          min-width: 14vw;
+        ">
+            <div style="font-size: clamp(1.4rem, 1.8vw, 2.2rem);">Coroutine B</div>
+            <div style="font-size: clamp(1.1rem, 1.4vw, 1.6rem); opacity: 0.7; margin-top: 0.5vh;">▶ resumes</div>
+          </div>
+
+        </div>
+
+        <!-- Code -->
+        <div style="max-width: 60%; margin: 0 auto;">
+          <pre style="
+      background: rgba(0,0,0,0.15);
+      padding: 1.5vh 2vw;
+      border-radius: 12px;
+      font-size: clamp(1.1rem, 1.4vw, 1.6rem);
+      line-height: 1.7;
+      text-align: left;
+      margin: 0;
+    "><code>coroutine_handle&lt;&gt; await_suspend(
+    coroutine_handle&lt;&gt; current) {
+  return next_coro; // B resumes, A stays suspended
+}</code></pre>
+        </div>
+
+        <p style="font-size: clamp(0.9rem, 1.1vw, 1.3rem); opacity: 0.6; margin-top: 2vh;">
+          see: symmetric_transfer/advanced.cpp
+        </p>
+
+      </section>
+
+      <!-- MCU: coroutine resumed from ISR -->
+      <section data-background-color="#e3dfd4">
+
+        <h2 style="
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    margin-bottom: 3vh;
+    text-align: center;
+  ">
+          Coroutines on MCU: ISR Context
+        </h2>
+
+        <!-- Timeline diagram -->
+        <svg viewBox="0 0 860 220" style="width: 90%; display: block; margin: 0 auto 3vh auto;">
+          <defs>
+            <marker id="arr-isr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#aa3333"/>
+            </marker>
+          </defs>
+
+          <!-- Row labels -->
+          <text x="10" y="58" font-size="14" fill="#333" font-family="monospace" font-weight="bold">Main</text>
+          <text x="10" y="148" font-size="14" fill="#aa3333" font-family="monospace" font-weight="bold">ISR</text>
+
+          <!-- Main timeline: only in gaps between blocks -->
+          <!-- gap: before co_await — nothing here, line starts at box -->
+          <!-- gap: suspended band IS the visual element, no separate line -->
+          <!-- gap: after coroutine body — nothing here -->
+
+          <!-- co_await block -->
+          <rect x="80" y="34" width="110" height="32" rx="6" fill="#d8d4c8" stroke="#555" stroke-width="1.5"/>
+          <text x="135" y="55" text-anchor="middle" font-size="13" fill="#333" font-family="monospace">co_await</text>
+
+          <!-- Main timeline: short stub before suspended band -->
+          <line x1="190" y1="50" x2="190" y2="50" stroke="#888" stroke-width="1.5"/>
+
+          <!-- suspended band -->
+          <rect x="190" y="39" width="450" height="22" rx="4" fill="#d8d4c8" stroke="#aaa" stroke-width="1" stroke-dasharray="4,3"/>
+          <text x="415" y="55" text-anchor="middle" font-size="12" fill="#888" font-family="monospace">coroutine suspended …</text>
+
+          <!-- coroutine body (runs in ISR ctx) -->
+          <rect x="640" y="34" width="190" height="32" rx="6" fill="#c8dcc8" stroke="#337733" stroke-width="1.5"/>
+          <text x="735" y="52" text-anchor="middle" font-size="12" fill="#225522" font-family="monospace">coroutine body</text>
+          <text x="735" y="64" text-anchor="middle" font-size="10" fill="#447744" font-family="monospace">(runs in ISR context)</text>
+
+          <!-- ISR timeline: segment before ISR fires (no boxes here) -->
+          <line x1="80" y1="140" x2="470" y2="140" stroke="#cc5555" stroke-width="1.5" stroke-dasharray="5,3"/>
+          <!-- ISR timeline: segment after handle.resume() -->
+          <line x1="730" y1="140" x2="840" y2="140" stroke="#cc5555" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+          <!-- ISR fires -->
+          <rect x="470" y="124" width="100" height="32" rx="6" fill="#dcc8c8" stroke="#aa3333" stroke-width="1.5"/>
+          <text x="520" y="145" text-anchor="middle" font-size="13" fill="#aa3333" font-family="monospace">ISR fires</text>
+
+          <!-- handle.resume() -->
+          <rect x="580" y="124" width="150" height="32" rx="6" fill="#dcc8c8" stroke="#aa3333" stroke-width="1.5"/>
+          <text x="655" y="145" text-anchor="middle" font-size="13" fill="#aa3333" font-family="monospace">handle.resume()</text>
+
+          <!-- Connector between ISR fires and handle.resume() -->
+          <line x1="570" y1="140" x2="580" y2="140" stroke="#aa3333" stroke-width="1.5"/>
+
+          <!-- Vertical: interrupt preempts main -->
+          <line x1="520" y1="124" x2="520" y2="67" stroke="#aa3333" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr-isr)"/>
+
+          <!-- Arrow: handle.resume() → coroutine body -->
+          <line x1="655" y1="124" x2="700" y2="68" stroke="#aa3333" stroke-width="1.5" marker-end="url(#arr-isr)"/>
+        </svg>
+
 
       </section>
 
